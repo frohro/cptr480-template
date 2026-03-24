@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "marus25.cortex-debug",
+        "paulober.micropico",
+        "ms-python.python"
+    ]
+}

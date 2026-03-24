@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Uses the Yapicoprobe on the Pico Debug Stack (CMSIS-DAP interface)
+            // Requires: arm-none-eabi-gdb, openocd >= 0.12 installed on the host
+            "name": "Pico Debug (Yapicoprobe / CMSIS-DAP)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "gdbPath": "arm-none-eabi-gdb",
+            "device": "RP2040",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/rp2040.cfg"
+            ],
+            // SVD file enables peripheral register view in VS Code debugger
+            // Update path if your SDK is not at ~/pico/pico-sdk
+            "svdFile": "${env:PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd",
+            "runToEntryPoint": "main",
+            // cmake.launchTargetPath resolves to whichever target is selected
+            // in the CMake Tools status bar
+            "executable": "${command:cmake.launchTargetPath}",
+            "openOCDLaunchCommands": [
+                "adapter speed 5000"
+            ],
+            "preLaunchTask": "CMake: Build"
+        }
+    ]
+}

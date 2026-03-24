@@ -1,0 +1,21 @@
+{
+    // CMake Tools — build into a build/ directory at the repo root
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.configureArgs": [
+        "-DPICO_BOARD=pico"
+    ],
+
+    // Point the C/C++ extension at the CMake Tools provider for IntelliSense
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+
+    // MicroPico — set the correct serial port for your board (update per machine)
+    // "micropico.syncFolder": "",
+    // "micropico.autoConnect": true,
+
+    // File nesting for cleaner explorer view
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "CMakeLists.txt": "*.cmake",
+        "*.c": "${capture}.h"
+    }
+}

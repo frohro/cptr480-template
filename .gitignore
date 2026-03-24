@@ -1,0 +1,58 @@
+# =============================================================================
+# CPTR 480 — .gitignore
+# =============================================================================
+
+# CMake build output — NEVER commit the build directory
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.ninja
+
+# Pico firmware binaries — the .uf2 is reproduced from source; don't commit it
+*.uf2
+*.elf
+*.bin
+*.map
+*.dis
+*.hex
+*.lst
+
+# Compiled object and library files
+*.o
+*.a
+
+# MicroPython — compiled bytecode
+__pycache__/
+*.pyc
+*.mpy
+
+# VS Code generated files (keep .vscode/ itself tracked — it has shared config)
+.vscode/c_cpp_properties.json
+.vscode/*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Linux
+*~
+*.bak
+*.swp
+*.swo
+
+# Python virtual environments (for host-side scripts)
+.venv/
+venv/
+env/
+
+# OpenOCD log
+openocd.log
