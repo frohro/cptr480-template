@@ -1,0 +1,9 @@
+[submodule "Pico_Debug_Stack"]
+	path = Pico_Debug_Stack
+	url = git@github.com:frohro/Pico_Debug_Stack.git
+[submodule "logicanalyzer"]
+	path = logicanalyzer
+	url = git@github.com:frohro/logicanalyzer.git
+[submodule "yapicoprobe"]
+	path = yapicoprobe
+	url = https://github.com/rgrr/yapicoprobe.git
