@@ -29,7 +29,7 @@ By the end of this lab you will be able to:
 - **USB-C cable** (the YD-RP2040 uses USB-C, not the Micro-USB of the official Pico)
 - Multimeter
 - Your laptop with VS Code installed (Copilot free tier must be working, and you must have finished installing the toolchain from Assignment 1)
-- **KiCad 10 installed** with the 2026 board schematic (`Intro-to-CAD-2026/Intro-to-CAD-2026.kicad_sch`) already confirmed to open — you will need it to trace GPIO pin numbers
+- **KiCad 10 installed** with the 2026 board schematic (`Intro-to-CAD-2026/Intro-to-CAD-2026.kicad_sch`) already confirmed to open — you will need it to trace GPIO pin numbers ([frohro/Intro-to-CAD-2026](https://github.com/frohro/Intro-to-CAD-2026), cloned as a submodule)
 
 ---
 
@@ -80,7 +80,7 @@ The 2026 board has four status LEDs that are driven serially (chained). Your fir
 4. Use GitHub Copilot Chat to generate a MicroPython script that blinks the four status LEDs on the **2026 board** (these are ordinary GPIO-driven LEDs on the 2026 board PCB — not the YD-RP2040's built-in NeoPixel). Prompt example:
    > *"Write a MicroPython script for a Raspberry Pi Pico that blinks GPIOs [X, Y, Z, W] at 2 Hz. The LEDs should blink together."*
    
-   **You will need to determine the correct GPIO numbers from the 2026 board schematic.** Open the schematic (`Intro-to-CAD-2026/Intro-to-CAD-2026.kicad_sch`), find the LED net labels, and trace them to the Pico/YD-RP2040 GPIO pins. This is the first schematic-reading exercise.
+   **You will need to determine the correct GPIO numbers from the 2026 board schematic.** Open `Intro-to-CAD-2026/Intro-to-CAD-2026.kicad_sch` (from [github.com/frohro/Intro-to-CAD-2026](https://github.com/frohro/Intro-to-CAD-2026)), find the LED net labels, and trace them to the Pico/YD-RP2040 GPIO pins. This is the first schematic-reading exercise.
 
    > **Note:** Do NOT try `machine.Pin(25, machine.Pin.OUT).toggle()` as a quick test — on the YD-RP2040, GPIO25 is not connected to a visible LED (unlike the official Pico where GPIO25 drives the built-in green LED). The YD-RP2040's built-in user LED is a **WS2812B NeoPixel RGB LED** on **GPIO23**, which requires the NeoPixel protocol rather than simple GPIO writes. Stick to the 2026 board's four status LEDs for this exercise.
 

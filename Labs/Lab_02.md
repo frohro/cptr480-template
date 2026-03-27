@@ -60,15 +60,14 @@ The Pico Debug Stack contains a debug probe (Yapicoprobe, U2) and a logic analyz
 
 ### 1b — Build and Flash the Logic Analyzer Firmware (U1) (~15 min)
 
-The Logic Analyzer firmware lives in the `pico-debug-stack` branch of the [Pico-Debug-Stack repository](https://github.com/frohro/Pico_Debug_Stack). It is a customized build of Dr. Gusman's LogicAnalyzer tuned for the Debug Stack hardware.
+The Logic Analyzer firmware ([github.com/frohro/logicanalyzer](https://github.com/frohro/logicanalyzer)) is already in your repo as the `logicanalyzer/` submodule — a build tuned for the Pico Debug Stack hardware, forked from Dr. Gusman's LogicAnalyzer.
 
-1. Clone the repository and check out the branch:
-   ```bash
-   git clone https://github.com/frohro/Pico_Debug_Stack.git
-   cd Pico_Debug_Stack
-   git checkout pico-debug-stack
-   ```
-2. Build the Logic Analyzer firmware:
+> **If `logicanalyzer/` is empty**, you cloned without `--recurse-submodules`. Fix it with:
+> ```bash
+> git submodule update --init --recursive
+> ```
+
+1. Build the Logic Analyzer firmware from your repo root:
    ```bash
    cd logicanalyzer/Firmware/LogicAnalyzer_V2
    mkdir build && cd build
@@ -76,16 +75,17 @@ The Logic Analyzer firmware lives in the `pico-debug-stack` branch of the [Pico-
    make -j4
    ```
    A successful build produces a `.uf2` file.
-3. Enter BOOTSEL mode on **U1**: hold U1's BOOTSEL button while pressing RESET (or while plugging in the Debug Stack).
-4. Drag-and-drop the `.uf2` onto U1's drive. U1 reboots into Logic Analyzer mode.
+2. Enter BOOTSEL mode on **U1**: hold U1's BOOTSEL button while pressing RESET (or while plugging in the Debug Stack).
+3. Drag-and-drop the `.uf2` onto U1's drive. U1 reboots into Logic Analyzer mode.
 
 ### 1c — Build and Flash Yapicoprobe (U2) (~15 min)
 
-[Yapicoprobe](https://github.com/rgrr/yapicoprobe) is an open-source CMSIS-DAP/picoprobe-compatible debug probe firmware.
+[Yapicoprobe](https://github.com/rgrr/yapicoprobe) is an open-source CMSIS-DAP/picoprobe-compatible debug probe firmware. It is already in your repo as the `yapicoprobe/` submodule.
 
-1. Clone and build Yapicoprobe:
+> **If `yapicoprobe/` is empty**, run `git submodule update --init --recursive` from your repo root.
+
+1. Build Yapicoprobe from your repo root:
    ```bash
-   git clone https://github.com/rgrr/yapicoprobe.git
    cd yapicoprobe
    mkdir build && cd build
    cmake .. -DPICO_BOARD=pico2

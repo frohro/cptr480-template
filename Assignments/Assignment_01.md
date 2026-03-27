@@ -170,6 +170,7 @@ You will read and trace the 2026 board schematic during Lab 1 to find GPIO pin a
 3. Open KiCad, then open the 2026 board schematic:
    - File → Open Project → navigate to `Intro-to-CAD-2026/Intro-to-CAD-2026.kicad_pro`
    - Double-click the `.kicad_sch` to open the schematic editor.
+   > The `Intro-to-CAD-2026/` folder comes from the [frohro/Intro-to-CAD-2026](https://github.com/frohro/Intro-to-CAD-2026) submodule. It is populated automatically when you clone with `--recurse-submodules` (step above).
 4. Spend 10 minutes exploring: find the YD-RP2040 symbol, follow a few net labels to see where they connect, locate the LED circuits.
 
 > **Verify:** You can open `Intro-to-CAD-2026/Intro-to-CAD-2026.kicad_sch` and see the schematic without errors. If KiCad prompts about missing libraries, click **Ignore** — the symbols we need are embedded in the file.
@@ -180,9 +181,10 @@ Do this to confirm everything is wired together correctly before Lab 1.
 
 1. Clone the class template repo (you'll get the assignment link from your instructor):
    ```bash
-   git clone git@github.com:WWU-CPTR480-2026/<your-repo-name>.git
+   git clone --recurse-submodules git@github.com:WWU-CPTR480-2026/<your-repo-name>.git
    cd <your-repo-name>
    ```
+   > **`--recurse-submodules` is required.** Your repo includes several submodules (`Intro-to-CAD-2026/`, `Pico_Debug_Stack/`, `logicanalyzer/`, `yapicoprobe/`). Without this flag those folders arrive empty. If you already cloned without it, fix with: `git submodule update --init --recursive`
 
 2. Build the Lab 1 SDK blink:
    ```bash
