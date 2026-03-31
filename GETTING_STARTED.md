@@ -19,6 +19,22 @@ If you already cloned without `--recurse-submodules`, run this to populate the s
 git submodule update --init --recursive
 ```
 
+### One-time git config (do this once per machine)
+
+This makes plain `git pull` automatically update all submodules — you never need `--recurse-submodules` again:
+
+```bash
+git config --global submodule.recurse true
+```
+
+When a **new** submodule appears in the repo (announced by the instructor), run this once after pulling:
+
+```bash
+git submodule update --init --recursive
+```
+
+After that one-time init, future `git pull`s handle it automatically.
+
 ### Submodules in this repo
 
 | Directory | Contents |
