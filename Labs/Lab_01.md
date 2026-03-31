@@ -86,8 +86,6 @@ The 2026 board has four status LEDs that are driven serially (chained). Your fir
 
 5. Run the script. All four LEDs should blink. Adjust the script if they don't.
 
-> **Bonus (optional):** After successfully blinking the 2026 board's four LEDs, try blinking the YD-RP2040's onboard NeoPixel. Use MicroPython's built-in `neopixel` module: `import neopixel; np = neopixel.NeoPixel(machine.Pin(23), 1)`. Cycle through red → green → blue to confirm the RGB LED is working.
-
 > **Deliverable:** Save your script as `lab1/blink_leds.py`. It must include a comment at the top listing which GPIO pin maps to which LED.
 
 ---
@@ -144,10 +142,11 @@ The 2026 board has two more peripherals you can test without the Debug Stack.
 
 ### 4a — WS2812B NeoPixel (GPIO 22)
 
-A ready-made solution is in `Labs/Lab_Solutions/lab2/rgb_led_test.py`. It cycles red → green → blue → yellow → cyan → magenta → white → off (600 ms per color). MicroPython's built-in `neopixel` module requires no extra install.
+MicroPython's built-in `neopixel` module requires no extra install. Use Copilot to generate a script that cycles the NeoPixel through at least four colors (e.g., red → green → blue → white), with 600 ms per color. Prompt suggestion:
+> *"Write a MicroPython script that cycles a single WS2812B NeoPixel on GPIO 22 through red, green, blue, and white at 600 ms per color, using the built-in neopixel module."*
 
-1. Upload and run `rgb_led_test.py`.
-2. Verify all seven colors light as expected.
+1. Generate the script with Copilot, then upload and run it.
+2. Verify the colors light as expected.
 3. Take a photo with at least two distinct colors visible.
 
 > **Deliverable:** Photo saved as `lab1/rgb_led_photo.jpg`.
@@ -161,9 +160,10 @@ A ready-made solution is in `Labs/Lab_Solutions/lab2/rgb_led_test.py`. It cycles
 | Encoder quadrature A | ANG_A | GPIO 18 |
 | Encoder quadrature B | ANG_B | GPIO 17 |
 
-All inputs use internal pull-ups (active-low when pressed). A ready-made solution is in `Labs/Lab_Solutions/lab2/button_encoder_test.py`. It decodes quadrature on ANG_A/ANG_B and prints a counter, and prints a message when BTN or SW_C is pressed. Press **Ctrl-C** to stop.
+All inputs use internal pull-ups (active-low when pressed). Use Copilot to generate a MicroPython script that decodes quadrature on ANG_A/ANG_B and prints an incrementing/decrementing counter, and prints a message when BTN or SW_C is pressed. Press **Ctrl-C** to stop. Prompt suggestion:
+> *"Write a MicroPython script for an RP2040 that reads a quadrature rotary encoder on GPIO 18 (A) and GPIO 17 (B), printing a counter on each detent. Also detect a push button on GPIO 21 and a center click on GPIO 5, printing a message when each is pressed. Use internal pull-ups."*
 
-1. Upload and run `button_encoder_test.py`.
+1. Generate the script with Copilot, then upload and run it.
 2. Turn the encoder CW and CCW — verify the counter increments and decrements.
 3. Press the push button and the encoder center click — verify both are detected.
 4. Take a screenshot of the MicroPico terminal output.
