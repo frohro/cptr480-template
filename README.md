@@ -6,8 +6,14 @@ It is **private** — only you and the instructor can see it.
 
 ---
 
+## Quick Start
+
+**New to the repo?** See **[GETTING_STARTED.md](GETTING_STARTED.md)** for a step-by-step guide: cloning (with submodules), installing the SDK/toolchain, building, flashing, debugging, and the weekly workflow.
+
+---
+
 ## Capstone Goal
-By Week 9, this repository's firmware will turn the [WWU 2026 SDR Board](../Intro-to-CAD-2026/) into a
+By Week 9, this repository's firmware will turn the [WWU 2026 SDR Board](Intro-to-CAD-2026/) into a
 USB Audio Class 2 device tunable from Quisk on a host PC.
 
 ---
@@ -16,14 +22,21 @@ USB Audio Class 2 device tunable from Quisk on a host PC.
 
 ```
 /
-├── lab1/          ← Lab 1 deliverables (blink, logic analyzer captures, MicroPython scripts)
-├── lab2/          ← Lab 2 deliverables (board validation, README)
-├── lab3/ ...      ← Added each week
-├── assignment1/   ← Assignment 1 deliverables
-├── assignment2/   ← Assignment 2 deliverables
-├── journal/       ← Weekly AI reflection journals
-├── 2026_board_README.md  ← Board documentation (completed by end of Week 2)
-├── CMakeLists.txt ← Top-level build — uncomment subdirs as you progress
+├── lab1/                ← Lab 1 deliverables (blink, logic analyzer captures, MicroPython scripts)
+├── lab2/                ← Lab 2 deliverables (board validation, README)
+├── lab3/ ...            ← Added each week
+├── assignment1/         ← Assignment 1 deliverables
+├── assignment2/         ← Assignment 2 deliverables
+├── journal/             ← Weekly AI reflection journals
+├── Intro-to-CAD-2026/  ← WWU 2026 SDR board schematic & PCB files (submodule)
+├── Pico_Debug_Stack/   ← Debug probe hardware files (submodule)
+├── logicanalyzer/      ← Logic analyzer gateware (submodule)
+├── yapicoprobe/        ← Yapicoprobe firmware (submodule)
+├── Labs/                ← Lab instruction documents
+├── Assignments/         ← Assignment documents
+├── 2026_board_README.md ← Board documentation (completed by end of Week 2)
+├── CPTR-480_Schedule.md ← Course schedule & due dates
+├── CMakeLists.txt       ← Top-level build — uncomment subdirs as you progress
 └── pico_sdk_import.cmake
 ```
 
@@ -69,6 +82,9 @@ Drag and drop the `.uf2` file onto it. Or use `picotool` / the debug probe.
 ---
 
 ## Grading
-- **60%** Weekly lab deliverables (GitHub commits, due midnight of lab day)
-- **30%** Final project demo + presentation
-- **10%** Weekly AI reflection journal (`journal/weekN.md`)
+- **50%** Weekly lab deliverables (GitHub commits, due Tuesday 2:00 p.m. the week after lab)
+- **20%** Homework assignments (GitHub commits, due Monday 11:00 a.m.)
+- **15%** AI reflection journal (`journal/weekN.md`)
+- **15%** Final demo + presentation
+
+See [CPTR-480_Schedule.md](CPTR-480_Schedule.md) for all due dates.

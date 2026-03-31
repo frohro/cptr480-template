@@ -56,3 +56,7 @@ env/
 
 # OpenOCD log
 openocd.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/

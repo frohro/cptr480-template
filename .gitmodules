@@ -7,3 +7,6 @@
 [submodule "yapicoprobe"]
 	path = yapicoprobe
 	url = https://github.com/rgrr/yapicoprobe.git
+[submodule "Intro-to-CAD-2026"]
+	path = Intro-to-CAD-2026
+	url = https://github.com/frohro/Intro-to-CAD-2026.git
