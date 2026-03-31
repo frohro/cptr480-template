@@ -1,0 +1,10 @@
+# KiCad backup zips — not needed for students
+*-backups/
+
+# KiCad local edit history — machine-specific
+.history/
+
+# KiCad auto-save / stray files
+.kicad_sch
+.kicad_sch.kicad_sch
+fp-info-cache
